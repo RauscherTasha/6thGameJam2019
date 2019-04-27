@@ -1,0 +1,64 @@
+﻿https://snowbillr.github.io/blog//2018-07-03-buttons-in-phaser-3/
+
+https://phaser.io/tutorials/making-your-first-phaser-3-game/part9
+
+**************
+phaser 3 text
+
+http://labs.phaser.io/index.html?dir=game%20objects/text/static/&q=
+
+http://labs.phaser.io/view.html?src=src/game%20objects\text\static\shadow%20stroke%20styles.js
+http://labs.phaser.io/edit.html?src=src\game%20objects\text\static\custom%20webfont.js
+
+		https://phaser.io/examples/v2/text/google-webfonts
+		https://phaser.io/examples/v2/text/dynamic-text-shadow
+		https://phaser.io/examples/v2/text/display-text-word-by-word
+
+**************
+XML for Text:
+
+<storyelement>
+	?<sId></sId>? bei änderungen gacks
+	<story></story>
+	<optionPos></optionPos>
+	<optionNeg></optionNeg>	
+	<conclussion></conclussion>
+</storyelement>
+
+
+**************
+Focus:
+Nicht alles/universum definiert die option sondern gezielt der character den man spielt seine "lustlose einstellung/ complette fehleinschätzung der situatio" (you feel the power of a raging god burn in your chest -> i think im getting sick; visit a doctor)
+
+(Option Struktur: gedanke &/oder handeln des characters)
+
+(Kein hightscore prinzip sondern die rise ist das ziel)
+
+**************
+Kurz & knackig & polished (max 2-5 mins one playthrough)
+
+
+**************
+Multiple playthroughs
+
+Randoms story gets more sense with next playthrough
+
+First all options player dosent take the opertunity of an adventure 
+
+2nd considers taking a chance
+
+3rd posivite ending to the taken chances
+
+*****
+Maybe add one option for each adventure chance
+Change the only answer (first t"extadventure walking sim" is it reall  game)
+
+**************
+Version:
+TL;DP (Too Long; Didn't Play)
+-> pitch story version (4-5 random stories only one answer short fast joke game)
+
+**************
+Ca time when last version goes online
+
+
