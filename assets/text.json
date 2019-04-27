@@ -15,13 +15,16 @@
       "story": "You are standing at a crossroad, there is a way to left; a Road to right and you could move on straight ahead",
       "optionPos": "",
       "optionNeg": "Hmmm... I’ll just sit down.",
-      "conclusion": ""
+      "conclusion": "",
+	  "background": "assets/images/BGCrossroad.png"
     },
     {
       "story": "While laying in your prison the door unlocks with a soft click",
       "optionPos": "",
       "optionNeg": "You roll around and continue to sleep",
-      "conclusion": ""
+      "conclusion": "",
+	  "background": "assets/images/BGCrossroad2.png"
+	  
     },
     {
       "story": "A Pokémon appears before you ready to be catches",
