@@ -2,20 +2,33 @@ class SceneMainMenu extends Phaser.Scene {
     constructor() {
         super({ key: "SceneMainMenu" });
     }
-
+	
+	/*
+	 * taken from text.json
+	 * {
+      "narrationStory":"" ,
+      "narrationPos":"" ,
+      "narrationNeg":"" ,
+      "narrationConclusion": "",
+      "background":"" ,
+      "story": "",
+      "optionPos": "",
+      "optionNeg": "",
+      "conclusion": ""
+    },
+	 * 
+	 */
+	
     preload() {
 		
-		this.storyIndex = 1;
+		this.numberOfQuestions = 4;
+		this.storyIndex = 0;
+		this.transitionTime = 750;
 		
 		this.load.json('SE', 'assets/text.json'); // SE story elements
-		
-		this.load.image('background1', "assets/images/BGCrossroad.png");
-		this.load.image('background2', "assets/images/BGCrossroad2.png");
-		
-		
-		// this.load.start();
-		
-		
+		for (var i = 0; i < this.numberOfQuestions; i++) {
+			this.load.image('background' + i, "assets/images/background" + i +".png");
+		}
 
     }
 
@@ -44,13 +57,9 @@ class SceneMainMenu extends Phaser.Scene {
 				}, this);
 				*/
 		
-		this.bg = this.add.image(0, 0, 'background1').setOrigin(0, 0);
+		this.bg = this.add.image(0, 0, 'background0').setOrigin(0, 0);
 		this.bg.depth = 100;
-
-		
         this.storyElements = this.cache.json.get('SE');
-		
-		//this.add.image(0, 0, 'background').setOrigin(0, 0);
 
         this.story = this.add.text(this.game.config.width * 0.5, this.game.config.height*0.1, this.storyElements.se[this.storyIndex].story, {
             fontFamily: 'monospace',
@@ -74,24 +83,19 @@ class SceneMainMenu extends Phaser.Scene {
         this.optionNeg.setInteractive(new Phaser.Geom.Rectangle(0, 0, this.story.width, this.story.height), Phaser.Geom.Rectangle.Contains);
 
         this.optionNeg.setOrigin(0.5);
+		
+				this.cameras.main.on('camerafadeoutcomplete', function() {
+					this.storyIndex = ((this.storyIndex + 1) % this.numberOfQuestions);
+					this.story.setText(this.storyElements.se[this.storyIndex].story);
+					var old_depth = this.bg.depth;
+					this.bg = this.add.image(0, 0, 'background'+this.storyIndex).setOrigin(0, 0);
+					this.bg.depth = old_depth + 10;
+					this.story.depth = old_depth + 20;
+					this.cameras.main.fadeIn(this.transitionTime);
+				}, this);
 
         this.optionNeg.on("pointerdown", function() {
-            //if(this.storyIndex < this.storyElements.se.length) {
-                this.storyIndex++;
-				this.story.setText(this.storyElements.se[this.storyIndex].story);
-				var old_depth = this.bg.depth;
-				this.bg = this.add.image(0, 0, 'background'+this.storyIndex).setOrigin(0, 0);
-				this.bg.depth = old_depth + 10;
-				this.story.depth = old_depth + 20;
-
-				/*
-				this.load.on('filecomplete', function (key, type, data) {
-					this.add.image(0, 0, 'background').setOrigin(0, 0);
-				}, this);
-				*/
-				// var background_image = this.storyElements.se[this.storyIndex].background;
-				// this.load.image('background', background_image);
-            //}
+			this.cameras.main.fadeOut(this.transitionTime);
         }, this);
 		
 		this.story.depth = 1000;
