@@ -56,7 +56,9 @@
       "conclusion": "",
       "background": "assets/images/BGPirateKabin.png"
 
-    },
+    }
+  ],
+  "rest": [
     {
       "story": "You find yourself playing a Text adventure where there’s always only one answer",
       "optionPos": "",

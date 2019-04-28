@@ -2,7 +2,11 @@ class SceneMainMenu extends Phaser.Scene {
     constructor() {
         super({key: "SceneMainMenu"});
     }
-	
+
+    init(data){
+        this.extremeMode =  data.extremeMode;
+    }
+
 	/*
 	 * taken from text.json
 	 * {
@@ -40,7 +44,8 @@ class SceneMainMenu extends Phaser.Scene {
         function addFiles(){
             for(let i=0; i<this.storyElementsLenght;i++) {
                 this.bg[i] = this.add.image(0, 0, 'background' + i).setOrigin(0, 0);
-                this.bg[i].depth = 100000-1000*i;
+                this.bg[i].setScale(.6666);
+                //this.bg[i].depth = 100000-1000*i;
             }
             console.log("done");
         }
@@ -68,15 +73,22 @@ class SceneMainMenu extends Phaser.Scene {
 
         this.optionNeg.setOrigin(0.5);
 
-				this.cameras.main.on('camerafadeoutcomplete', function() {
-					this.storyIndex = ((this.storyIndex + 1) % this.storyElementsLenght);
-					this.story.setText(this.storyElements.se[this.storyIndex].story);
-					var old_depth = this.bg[this.storyIndex-1].depth;
-					this.bg[this.storyIndex ] = this.add.image(0, 0, 'background'+this.storyIndex).setOrigin(0, 0);
-					this.bg[this.storyIndex].depth = old_depth + 10;
-					this.story.depth = old_depth + 20;
-					this.cameras.main.fadeIn(this.transitionTime);
-				}, this);
+        this.cameras.main.on('camerafadeoutcomplete', function() {
+            this.storyIndex++;// = ((this.storyIndex) % this.storyElementsLenght);
+            this.optionNeg.setY(this.game.config.height * (0.1 + Math.random() * .8));
+            this.story.setText(this.storyElements.se[this.storyIndex].story);
+            var old_depth = this.bg[this.storyIndex].depth;
+            this.bg[this.storyIndex ] = this.add.image(0, 0, 'background'+this.storyIndex).setOrigin(0, 0);
+            this.bg[this.storyIndex].depth = old_depth + 10;
+            this.story.depth = old_depth + 20;
+            this.cameras.main.fadeIn(this.transitionTime);
+
+            if(!this.extremeMode) {
+                this.optionNeg.setText(this.storyElements.se[this.storyIndex].optionNeg);
+            };
+
+
+        }, this);
 
 //<<<<<<< HEAD
         /*this.optionNeg.on("pointerdown", function () {
