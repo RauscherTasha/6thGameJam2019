@@ -3,22 +3,6 @@ class SceneMainMenu extends Phaser.Scene {
         super({key: "SceneMainMenu"});
     }
 	
-	/*
-	 * taken from text.json
-	 * {
-      "narrationStory":"" ,
-      "narrationPos":"" ,
-      "narrationNeg":"" ,
-      "narrationConclusion": "",
-      "background":"" ,
-      "story": "",
-      "optionPos": "",
-      "optionNeg": "",
-      "conclusion": ""
-    },
-	 * 
-	 */
-	
     preload() {
         this.load.json('SE', 'assets/text.json'); // SE story elements
     }
@@ -48,23 +32,49 @@ class SceneMainMenu extends Phaser.Scene {
         this.story = this.add.text(this.game.config.width * 0.5, this.game.config.height * 0.1, this.storyElements.se[this.storyIndex].story, {
             fontFamily: 'monospace',
             fontSize: 40,
-            fontStyle: 'bold',
-            color: '#ff0000',
+            // fontStyle: 'bold',
+            color: '#ffffff',
             align: 'center',
         });
+		
+		this.story.setStroke('#000000', 12);
+		this.story.setShadow(2, 2, "#000000", 2, true, true);
         this.story.setInteractive(new Phaser.Geom.Rectangle(0, 0, this.story.width, this.story.height), Phaser.Geom.Rectangle.Contains);
-
         this.story.setOrigin(0.5);
 
         //Option
         this.optionNeg = this.add.text(this.game.config.width * 0.5, this.game.config.height * (0.1 + Math.random() * .8), this.storyElements.se[this.storyIndex].optionNeg, {
             fontFamily: 'monospace',
             fontSize: 40,
-            fontStyle: 'bold',
-            color: '#ff0000',
+            // fontStyle: 'bold',
+            color: '#000000',
             align: 'center',
         });
+		
+		/*
+		this.optionNeg.setInteractive();
+		this.optionNeg.on('pointerover', () => enterButtonHoverState())
+		this.optionNeg.on('pointerout', () => enterButtonRestState());
+		
+		function enterButtonHoverState() {
+			this.optionNeg.setAlpha(0.5);
+		}
+
+		function enterButtonRestState() {
+			this.optionNeg.setAlpha(1);
+		}
+		*/
+		
+		this.optionNeg.setStroke('#ffffff', 12);
+		this.optionNeg.setShadow(2, 2, "#ffffff", 2, true, true);
         this.optionNeg.setInteractive(new Phaser.Geom.Rectangle(0, 0, this.story.width, this.story.height), Phaser.Geom.Rectangle.Contains);
+		
+		this.optionNeg.on('pointerover', function() {
+			this.optionNeg.setAlpha(0.6);
+        }, this);
+		this.optionNeg.on('pointerout', function() {
+			this.optionNeg.setAlpha(1);
+        }, this);
 
         this.optionNeg.setOrigin(0.5);
 
@@ -78,29 +88,6 @@ class SceneMainMenu extends Phaser.Scene {
 					this.cameras.main.fadeIn(this.transitionTime);
 				}, this);
 
-//<<<<<<< HEAD
-        /*this.optionNeg.on("pointerdown", function () {
-            if(this.storyIndex < this.storyElementsLenght) {
-                for(let i = this.storyElementsLenght - 1; i >= 0; i--) {
-                    if(i ==this.storyIndex) {
-                        this.bg[this.storyIndex].depth = 0;
-                    }else {
-                        this.bg[this.storyIndex].depth += -1;
-                        this.bg[this.storyIndex].depth += 1;
-                    }
-                    console.log("BG:\n "+this.bg[this.storyIndex].name);
-
-
-                }
-                console.log(this.bg);
-                this.storyIndex++;
-                this.story.setText(this.storyElements.se[this.storyIndex].story);
-                this.optionNeg.setText(this.storyElements.se[this.storyIndex].optionNeg);
-                this.optionNeg.setY(this.game.config.height * (0.1 + Math.random() * .8));
-                //this.bg = (this.add.image(0, 0, 'background' + this.storyIndex).setOrigin(0, 0));
-
-            }
-*/
         this.optionNeg.on("pointerdown", function() {
 			this.cameras.main.fadeOut(this.transitionTime);
         }, this);
