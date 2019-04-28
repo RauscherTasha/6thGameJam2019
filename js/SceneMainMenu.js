@@ -23,6 +23,7 @@ class SceneMainMenu extends Phaser.Scene {
             for(let i=0; i<this.storyElementsLenght;i++) {
 
                 this.bg[i] = this.add.image(0, 0, 'background' + i).setOrigin(0, 0);
+                this.bg[i].depth = 100000-1000*i;
             }
             console.log("done");
         }
@@ -64,6 +65,8 @@ class SceneMainMenu extends Phaser.Scene {
 
         }, this);
 
+        this.story.depth = 500000;
+        this.optionNeg.depth = 600000;
 
     }
 
