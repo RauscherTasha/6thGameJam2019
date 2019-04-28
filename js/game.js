@@ -2,9 +2,10 @@ var config = {
     type: Phaser.AUTO,
     width: 2130,
     height: 1200,
+    backgroundColor: 0xFFFFFF,
     scene: [
-        SceneMainMenu,
-		SceneMain
+        SceneMain,
+        SceneMainMenu
     ]
 }
 

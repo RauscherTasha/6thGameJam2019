@@ -1,31 +1,29 @@
 {
   "se": [
     {
-      "story": "You are standing at a crossroad, there is a way to left; a Road to right and you could move on straight ahead",
+      "story": "You are standing in front of a crossing and you\nare free to choose any live-changing road.",
       "optionPos": "",
-      "optionNeg": "Hmmm... I’ll just sit down.",
+      "optionNeg": "Hmmm... I`ll just sit down.",
       "conclusion": "",
-	  "background": "assets/images/BGCrossroad.png"
+      "background": "assets/images/BGCrossroad.png"
     },
     {
-      "story": "While laying in your prison the door unlocks with a soft click",
+      "story": "You are laying in your prison and the door suddenly unlocks.\nThe smell of freedom approaches you...",
       "optionPos": "",
-      "optionNeg": "You roll around and continue to sleep",
+      "optionNeg": "You turn around and continue sleeping.",
       "conclusion": "",
-	  "background": "assets/images/BGPrison.png"
-
-	  
+      "background": "assets/images/BGPrison.png"
     },
     {
-      "story": "A Pokémon appears before you ready to be catches",
+      "story": "A mystic pocket digi of high value suddenly appears straight in front of you!",
       "optionPos": "",
-      "optionNeg": "I wanna take a nap",
+      "optionNeg": "I wanna take a nap.",
       "conclusion": "",
       "background": "assets/images/BGPokemon.png"
 
     },
     {
-      "story": "You find a Lotto ticket with 6 correct numbers!!!",
+      "story": "You are the lucky finder of a lottery ticket with the right numbers!!!",
       "optionPos": "",
       "optionNeg": "Hmmm... *checks Wallet* I still have 10 bucks, I’m fine.",
       "conclusion": "",
@@ -34,17 +32,17 @@
     },
 
     {
-      "story": "Your letter to Hogwarts just arrived",
+      "story": "You have been randomly selected from 1000 people for\nan VIP meeting with headmaster Gandalf, in person!",
       "optionPos": "",
-      "optionNeg": "I’ll finish my sandwich)",
+      "optionNeg": "I cannot leave, I need to eat my sandwich.",
       "conclusion": "",
       "background": "assets/images/BGRoom.png"
 
     },
     {
-      "story": "You start rolling, down a hill",
+      "story": "You start rolling, down a hill..",
       "optionPos": "",
-      "optionNeg": "Meh it happens ¯\\_(ツ)_/¯",
+      "optionNeg": "I wanna` test my strength ¯\\_(ツ)_/¯",
       "conclusion": "",
       "background": "assets/images/BGRollingHill.png"
 
@@ -52,29 +50,10 @@
     {
       "story": "You wake up in a cabin on a ship.",
       "optionPos": "",
-      "optionNeg": "You are the Captain of this ship and you order yourself to walk the plank.",
+      "optionNeg": "I'm the Captain of this ship and I feel like ordering myself to walk the plank.",
       "conclusion": "",
       "background": "assets/images/BGPirateKabin.png"
 
-    },
-    {
-      "story": "You find yourself playing a Text adventure where there’s always only one answer",
-      "optionPos": "",
-      "optionNeg": "I love having no options (No analysis paralysis for me \uD83D\uDE0A)",
-      "conclusion": "",
-      "background": "assets/images/BGCrossroad2.png"
-
-    },
-    {
-      "narrationStory":"******************************" ,
-      "narrationPos":"******************************" ,
-      "narrationNeg":"******************************" ,
-      "narrationConclusion": "******************************",
-      "background":"assets/images/BGCrossroad2.png" ,
-      "story": "******************************",
-      "optionPos": "******************************",
-      "optionNeg": "******************************",
-      "conclusion": "******************************"
     }
   ]
 }
