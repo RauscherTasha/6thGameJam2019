@@ -12,23 +12,22 @@ class SceneMain extends Phaser.Scene {
 
     create() {
         this.newGame = this.add.image(0, 0, "newGame").setOrigin(0,0);
-        this.evil = this.add.image(1200,300, "evil").setOrigin(0,0);//(this.game.height*.30, this.game.width*.70, "evil").setOrigin(0,0);
+        this.evil = this.add.image(this.game.config.width*.55,this.game.config.height*.25, "evil").setOrigin(0,0);//(this.game.height*.30, this.game.width*.70, "evil").setOrigin(0,0);
         this.evil.depth=10000;
         this.evil.setAlpha(.4);
-        this.nice = this.add.image(1700,300, "nice").setOrigin(0,0);//(this.game.height*.30, this.game.width*.80, "nice").setOrigin(0,0);
+        this.nice = this.add.image(this.game.config.width*.78,this.game.config.height*.26, "nice").setOrigin(0,0);//(this.game.height*.30, this.game.width*.80, "nice").setOrigin(0,0);
         this.nice.setAlpha(.4);
         this.nice.depth=10000;
         this.extremeMode = true;
 
 
-        //this.newGame.setScale(.6666);
         this.newGame.setInteractive();
         this.newGame.on("pointerdown", ()=>{
             this.scene.start("SceneMainMenu",{extremeMode:this.extremeMode});
         }, this);
 
-        this.evil.setScale(.25);
         this.evil.setInteractive();
+        this.evil.setScale(.8);
         this.evil.on("pointerdown", ()=>{
             this.extremeMode = true;
             this.evil.setAlpha(1);
@@ -37,8 +36,8 @@ class SceneMain extends Phaser.Scene {
         }, this);
 
 
-        this.nice.setScale(.25);
         this.nice.setInteractive();
+        this.nice.setScale(.8);
         this.nice.on("pointerdown", ()=>{
             this.extremeMode = false;
             this.nice.setAlpha(1);
