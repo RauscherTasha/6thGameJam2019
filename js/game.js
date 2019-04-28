@@ -4,8 +4,7 @@ var config = {
     height: 1200,
     scene: [
         SceneMainMenu,
-        // SceneMain,
-        // SceneSingleQuestion
+		SceneMain
     ]
 }
 
