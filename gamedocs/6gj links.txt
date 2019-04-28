@@ -14,17 +14,6 @@ http://labs.phaser.io/edit.html?src=src\game%20objects\text\static\custom%20webf
 		https://phaser.io/examples/v2/text/dynamic-text-shadow
 		https://phaser.io/examples/v2/text/display-text-word-by-word
 
-**************
-XML for Text:
-
-<storyelement>
-	?<sId></sId>? bei änderungen gacks
-	<story></story>
-	<optionPos></optionPos>
-	<optionNeg></optionNeg>	
-	<conclussion></conclussion>
-</storyelement>
-
 
 **************
 Focus:

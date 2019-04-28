@@ -1,17 +1,6 @@
 {
   "se": [
     {
-      "narrationStory":"" ,
-      "narrationPos":"" ,
-      "narrationNeg":"" ,
-      "narrationConclusion": "",
-      "background":"" ,
-      "story": "",
-      "optionPos": "",
-      "optionNeg": "",
-      "conclusion": ""
-    },
-    {
       "story": "You are standing at a crossroad, there is a way to left; a Road to right and you could move on straight ahead",
       "optionPos": "",
       "optionNeg": "Hmmm... I’ll just sit down.",
@@ -23,20 +12,68 @@
       "optionPos": "",
       "optionNeg": "You roll around and continue to sleep",
       "conclusion": "",
-	  "background": "assets/images/BGCrossroad2.png"
+	  "background": "assets/images/BGPrison.png"
 	  
     },
     {
       "story": "A Pokémon appears before you ready to be catches",
       "optionPos": "",
       "optionNeg": "I wanna take a nap",
-      "conclusion": ""
+      "conclusion": "",
+      "background": "assets/images/BGPokemon.png"
+
     },
     {
       "story": "You find a Lotto ticket with 6 correct numbers!!!",
       "optionPos": "",
       "optionNeg": "Hmmm... *checks Wallet* I still have 10 bucks, I’m fine.",
-      "conclusion": ""
+      "conclusion": "",
+      "background": "assets/images/BGLotto.png"
+
+    },
+
+    {
+      "story": "Your letter to Hogwarts just arrived",
+      "optionPos": "",
+      "optionNeg": "I’ll finish my sandwich)",
+      "conclusion": "",
+      "background": "assets/images/BGRoom.png"
+
+    },
+    {
+      "story": "You start rolling, down a hill",
+      "optionPos": "",
+      "optionNeg": "Meh it happens ¯\\_(ツ)_/¯",
+      "conclusion": "",
+      "background": "assets/images/BGRollingHill.png"
+
+    },
+    {
+      "story": "You wake up in a cabin on a ship.",
+      "optionPos": "",
+      "optionNeg": "You are the Captain of this ship and you order yourself to walk the plank.",
+      "conclusion": "",
+      "background": "assets/images/BGPirateKabin.png"
+
+    },
+    {
+      "story": "You find yourself playing a Text adventure where there’s always only one answer",
+      "optionPos": "",
+      "optionNeg": "I love having no options (No analysis paralysis for me \uD83D\uDE0A)",
+      "conclusion": "",
+      "background": "assets/images/BGCrossroad2.png"
+
+    },
+    {
+      "narrationStory":"******************************" ,
+      "narrationPos":"******************************" ,
+      "narrationNeg":"******************************" ,
+      "narrationConclusion": "******************************",
+      "background":"assets/images/BGCrossroad2.png" ,
+      "story": "******************************",
+      "optionPos": "******************************",
+      "optionNeg": "******************************",
+      "conclusion": "******************************"
     }
   ]
 }
