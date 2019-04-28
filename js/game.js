@@ -1,11 +1,10 @@
 var config = {
-    type: Phaser.WEBGL,
+    type: Phaser.AUTO,
     width: 2130,
     height: 1200,
     scene: [
         SceneMainMenu,
-        // SceneMain,
-        // SceneSingleQuestion
+		SceneMain
     ]
 }
 
