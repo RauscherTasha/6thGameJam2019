@@ -7,7 +7,6 @@ class SceneMainMenu extends Phaser.Scene {
         this.extremeMode = data.extremeMode;
     }
 
-
     preload() {
         this.load.json('SE', 'assets/text.json'); // SE story elements
     }
@@ -70,7 +69,10 @@ class SceneMainMenu extends Phaser.Scene {
         this.cameras.main.on('camerafadeoutcomplete', function () {
             console.log("before: "+this.storyIndex);
 
-            this.storyIndex = ((this.storyIndex + 1) % this.storyElementsLenght);
+            this.storyIndex++;// = ((this.storyIndex + 1) % this.storyElementsLenght);
+            if(this.storyIndex == this.storyElementsLenght){
+                //this.scene.start("SceneMain");
+            }else{
             console.log("after: "+this.storyIndex);
             this.optionNeg.setY(this.game.config.height * (0.1 + Math.random() * .8));
             this.story.setText(this.storyElements.se[this.storyIndex].story);
@@ -82,8 +84,7 @@ class SceneMainMenu extends Phaser.Scene {
 
             if (!this.extremeMode) {
                 this.optionNeg.setText(this.storyElements.se[this.storyIndex].optionNeg);
-            }
-            ;
+            };}
 
         }, this);
 

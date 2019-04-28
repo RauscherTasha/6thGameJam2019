@@ -5,7 +5,7 @@ var config = {
     backgroundColor: 0xFFFFFF,
     scene: [
         SceneMain,
-        SceneMainMenu
+        SceneMainMenu,
     ]
 }
 
