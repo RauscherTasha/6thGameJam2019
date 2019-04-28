@@ -67,19 +67,19 @@ class SceneMainMenu extends Phaser.Scene {
         this.optionNeg.setInteractive(new Phaser.Geom.Rectangle(0, 0, this.story.width, this.story.height), Phaser.Geom.Rectangle.Contains);
 
         this.optionNeg.setOrigin(0.5);
-		/*
+
 				this.cameras.main.on('camerafadeoutcomplete', function() {
 					this.storyIndex = ((this.storyIndex + 1) % this.storyElementsLenght);
 					this.story.setText(this.storyElements.se[this.storyIndex].story);
-					var old_depth = this.bg.depth;
-					this.bg = this.add.image(0, 0, 'background'+this.storyIndex).setOrigin(0, 0);
-					this.bg.depth = old_depth + 10;
+					var old_depth = this.bg[this.storyIndex-1].depth;
+					this.bg[this.storyIndex ] = this.add.image(0, 0, 'background'+this.storyIndex).setOrigin(0, 0);
+					this.bg[this.storyIndex].depth = old_depth + 10;
 					this.story.depth = old_depth + 20;
 					this.cameras.main.fadeIn(this.transitionTime);
-				}, this);*/
+				}, this);
 
 //<<<<<<< HEAD
-        this.optionNeg.on("pointerdown", function () {
+        /*this.optionNeg.on("pointerdown", function () {
             if(this.storyIndex < this.storyElementsLenght) {
                 for(let i = this.storyElementsLenght - 1; i >= 0; i--) {
                     if(i ==this.storyIndex) {
@@ -88,6 +88,7 @@ class SceneMainMenu extends Phaser.Scene {
                         this.bg[this.storyIndex].depth += -1;
                         this.bg[this.storyIndex].depth += 1;
                     }
+                    console.log("BG:\n "+this.bg[this.storyIndex].name);
 
 
                 }
@@ -99,11 +100,9 @@ class SceneMainMenu extends Phaser.Scene {
                 //this.bg = (this.add.image(0, 0, 'background' + this.storyIndex).setOrigin(0, 0));
 
             }
-
-/*=======
+*/
         this.optionNeg.on("pointerdown", function() {
 			this.cameras.main.fadeOut(this.transitionTime);
->>>>>>> refs/remotes/origin/master*/
         }, this);
 
         this.story.depth = 500000;

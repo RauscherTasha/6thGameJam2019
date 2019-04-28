@@ -25,8 +25,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/SceneMainMenu.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="88" column="60" selection-start-line="88" selection-start-column="60" selection-end-line="88" selection-end-column="60" />
+            <state relative-caret-position="350">
+              <caret line="76" column="54" lean-forward="true" selection-start-line="76" selection-start-column="54" selection-end-line="76" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -110,11 +110,11 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\doks\6thGameJam2019" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\doks\6thGameJam2019\js" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\doks\6thGameJam2019" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -151,12 +151,12 @@
       <updated>1556357499085</updated>
       <workItem from="1556357500220" duration="19858000" />
       <workItem from="1556405427431" duration="7834000" />
-      <workItem from="1556438513852" duration="3272000" />
+      <workItem from="1556438513852" duration="5143000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32367000" />
+    <option name="totallyTimeSpent" value="34238000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -238,8 +238,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/SceneMainMenu.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="88" column="60" selection-start-line="88" selection-start-column="60" selection-end-line="88" selection-end-column="60" />
+        <state relative-caret-position="350">
+          <caret line="76" column="54" lean-forward="true" selection-start-line="76" selection-start-column="54" selection-end-line="76" selection-end-column="54" />
         </state>
       </provider>
     </entry>
