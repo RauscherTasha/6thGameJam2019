@@ -9,9 +9,12 @@ class SceneMainMenu extends Phaser.Scene {
 
     preload() {
         this.load.json('SE', 'assets/text.json'); // SE story elements
+        this.load.image("bgEnd", "assets/images/BGEnd.png");
+
     }
 
     create() {
+        console.log("game started")
         this.transitionTime = 750;
         this.storyElements = this.cache.json.get('SE');
         this.storyElementsLength = this.storyElements.se.length;
@@ -69,8 +72,15 @@ class SceneMainMenu extends Phaser.Scene {
                 console.log("images#: " + this.bg.length);
 
 
-                if (this.storyIndex == this.storyElementsLength) {
-                    setTimeout(()=>{this.scene.start("SceneMain")},1000) ;
+                if (this.storyIndex >= this.storyElementsLength) {
+                    setTimeout(()=>{
+                        this.bgEnd = this.add.image(0, 0, "bgEnd").setOrigin(0,0);
+                        this.bgEnd.depth = this.bg[this.storyElementsLength-1].depth + 5000
+                        this.cameras.main.fadeIn(this.transitionTime);
+
+                        //this.scene.start("SceneMain");
+                        //this.game.state.start('SceneMain');
+                        },3000) ;
                 } else {
                     console.log("after: " + this.storyIndex);
                     this.optionNeg.setY(this.game.config.height * (0.35 + Math.random() * .55));
@@ -99,6 +109,5 @@ class SceneMainMenu extends Phaser.Scene {
             this.cameras.main.fadeOut(1);
 
         }
-
     }
 }

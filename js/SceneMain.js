@@ -40,6 +40,8 @@ class SceneMain extends Phaser.Scene {
                 this.nice.setAlpha(.4);
             }else if (this.extremeMode){
                 this.cameras.main.fadeOut(this.transitionTime);
+                //let theOtherScene = this.scene.get('SceneMainMenu');
+                //theOtherScene.scene.restart({extremeMode:this.extremeMode});
                 this.scene.start("SceneMainMenu",{extremeMode:this.extremeMode});
             }
             // this.story.setShadow(2, 2, "#000000", 2, true, true);
@@ -54,6 +56,8 @@ class SceneMain extends Phaser.Scene {
                 this.nice.setAlpha(1);
                 this.evil.setAlpha(.4);
             }else if (!this.extremeMode){
+                //let theOtherScene = this.scene.get('SceneMainMenu');
+                //theOtherScene.scene.restart({extremeMode:this.extremeMode});
                 this.scene.start("SceneMainMenu",{extremeMode:this.extremeMode});
             }
         }, this);
