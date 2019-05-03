@@ -33,7 +33,7 @@
     {
       "story": "You are laying in your prison as the door suddenly unlocks.\nThe smell of freedom approaches you...",
       "optionPos": "",
-      "optionNeg": "Just 10 more minutes please.\n*Turns around and continue sleeping*",
+      "optionNeg": "Just 10 more minutes please.\n*Turns around and continues sleeping*",
       "conclusion": "",
       "background": "assets/images/BGPrison.png"
     },
