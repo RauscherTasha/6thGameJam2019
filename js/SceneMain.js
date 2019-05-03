@@ -62,6 +62,12 @@ class SceneMain extends Phaser.Scene {
             }
         }, this);
 
+        this.cameras.main.on('camerafadeoutstart', () => {
+            this.evil.removeInteractive();
+            this.nice.removeInteractive();
+            this.newGame.removeInteractive();
+        }, this);
+
         this.cameras.main.fadeIn(this.transitionTime);
 
     }

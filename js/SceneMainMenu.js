@@ -20,6 +20,7 @@ class SceneMainMenu extends Phaser.Scene {
         this.storyElementsLength = this.storyElements.se.length;
         this.storyIndex = 0;
         this.bg = [];
+        this.firstrender = true;
 
         for (let i = 0; i < this.storyElementsLength; i++) {
             this.load.image('background' + i, this.storyElements.se[i].background);
@@ -30,9 +31,13 @@ class SceneMainMenu extends Phaser.Scene {
         function addFiles() {
             for (let i = 0; i < this.storyElementsLength; i++) {
                 this.bg[i] = this.add.image(0, 0, 'background' + i).setOrigin(0, 0);
+                this.bg[i].setVisible(false);
                 //this.bg[i].depth = 100000 - 1000 * i;
             }
             console.log("done with images#: " + this.bg.length);
+
+            //first image
+
 
             this.story = this.add.text(this.game.config.width * 0.5, this.game.config.height * 0.1, this.storyElements.se[this.storyIndex].story, {
                 fontFamily: 'monospace',
@@ -73,30 +78,57 @@ class SceneMainMenu extends Phaser.Scene {
 
 
                 if (this.storyIndex >= this.storyElementsLength) {
-                    setTimeout(()=>{
-                        this.bgEnd = this.add.image(0, 0, "bgEnd").setOrigin(0,0);
-                        this.bgEnd.depth = this.bg[this.storyElementsLength-1].depth + 5000
+                    setTimeout(() => {
+                        this.bgEnd = this.add.image(0, 0, "bgEnd").setOrigin(0, 0);
+                        this.bgEnd.depth = this.bg[this.storyElementsLength - 1].depth + 5000
                         this.cameras.main.fadeIn(this.transitionTime);
-
                         //this.scene.start("SceneMain");
                         //this.game.state.start('SceneMain');
-                        },3000) ;
+                    }, 2750);
                 } else {
                     console.log("after: " + this.storyIndex);
-                    this.optionNeg.setY(this.game.config.height * (0.35 + Math.random() * .55));
-                    this.story.setText(this.storyElements.se[this.storyIndex].story);
-                    this.bg[this.storyIndex] = this.add.image(0, 0, 'background' + this.storyIndex).setOrigin(0, 0);
-                    this.bg[this.storyIndex].depth = this.storyIndex * 1000;
-                    this.story.depth = this.bg[this.storyIndex].depth + 100
-                    this.optionNeg.depth = this.bg[this.storyIndex].depth + 100
-                    this.cameras.main.fadeIn(this.transitionTime);
+                    if (this.firstrender) {
+                        this.optionNeg.setVisible(false);
+                        this.story.setVisible(false);
+                        this.cameras.main.fadeIn(1);
+                        this.cameras.main.fadeOut(this.transitionTime);
 
-                    if (!this.extremeMode) {
-                        this.optionNeg.setText(this.storyElements.se[this.storyIndex].optionNeg);
+                        this.firstrender = false;
+                    } else {
+
+                        this.optionNeg.setY(this.game.config.height * (0.35 + Math.random() * .55));
+                        this.story.setText(this.storyElements.se[this.storyIndex].story);
+                        if (!this.extremeMode) {
+                            this.optionNeg.setText(this.storyElements.se[this.storyIndex].optionNeg);
+                        }
+
+                        this.optionNeg.setVisible(true);
+                        this.optionNeg.setInteractive(new Phaser.Geom.Rectangle(0, 0, this.optionNeg.width, this.optionNeg.height), Phaser.Geom.Rectangle.Contains);
+                        this.optionNeg.setAlpha(1);
+
+                        this.story.setVisible(true);
+                        this.story.setInteractive(new Phaser.Geom.Rectangle(0, 0, this.story.width, this.story.height), Phaser.Geom.Rectangle.Contains);
+                        this.optionNeg.setAlpha(1);
+
+                        this.bg[this.storyIndex] = this.add.image(0, 0, 'background' + this.storyIndex).setOrigin(0, 0);
+                        this.bg[this.storyIndex].depth = (this.storyIndex + 1) * 1000;
+                        this.bg[this.storyIndex].setVisible(true);
+                        this.story.depth = this.bg[this.storyIndex].depth + 100
+                        this.optionNeg.depth = this.bg[this.storyIndex].depth + 100
+                        this.cameras.main.fadeIn(this.transitionTime);
+
+
+
+                        this.cameras.main.fadeIn(this.transitionTime);
+
                     }
-                    this.cameras.main.fadeIn(this.transitionTime);
                 }
 
+            }, this);
+
+            this.cameras.main.on('camerafadeoutstart', () => {
+                this.story.removeInteractive();
+                this.optionNeg.removeInteractive();
             }, this);
 
             this.optionNeg.on("pointerdown", function () {

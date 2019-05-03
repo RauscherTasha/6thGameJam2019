@@ -1,54 +1,52 @@
 {
   "se": [
     {
-      "story": "You are standing in front of a crossing and you\nare free to choose any live-changing road.",
+      "story": "You are standing at crossroad. There is a road to left,\na way to right or you could move on straight ahead.",
       "optionPos": "",
-      "optionNeg": "Hmmm... I`ll just sit down.",
+      "optionNeg": "Hmmm... I'll just sit down.",
       "conclusion": "",
       "background": "assets/images/BGCrossroad.png"
     },
     {
-      "story": "You are laying in your prison and the door suddenly unlocks.\nThe smell of freedom approaches you...",
+      "story": "You are the lucky finder of a winner lottery ticket!!!\nEven the bonus ball is correct!?!?",
       "optionPos": "",
-      "optionNeg": "You turn around and continue sleeping.",
-      "conclusion": "",
-      "background": "assets/images/BGPrison.png"
-    },
-    {
-      "story": "A mystic pocket digi of high value suddenly appears straight in front of you!",
-      "optionPos": "",
-      "optionNeg": "I wanna take a nap.",
-      "conclusion": "",
-      "background": "assets/images/BGPokemon.png"
-
-    },
-    {
-      "story": "You are the lucky finder of a lottery ticket with the right numbers!!!",
-      "optionPos": "",
-      "optionNeg": "Hmmm... *checks Wallet* I still have 10 bucks, I’m fine.",
+      "optionNeg": "Hmmm... *checks Wallet* I still have 10 bucks, I'm fine.",
       "conclusion": "",
       "background": "assets/images/BGLotto.png"
 
     },
-
     {
-      "story": "You have been randomly selected from 1000 people for\nan VIP meeting with headmaster Gandalf, in person!",
+      "story": "A mysterious poke-a-digi that has never been seen \nbefore suddenly appears right in front of you!",
       "optionPos": "",
-      "optionNeg": "I cannot leave, I need to eat my sandwich.",
+      "optionNeg": "I'm tired... I should take a nap.",
+      "conclusion": "",
+      "background": "assets/images/BGPokemon.png"
+    },
+    {
+      "story": "You have been hand-picked by headmaster Gandalf \nto enter the non generic wizard school Logwards.",
+      "optionPos": "",
+      "optionNeg": "I'll just finish my sandwich first.",
       "conclusion": "",
       "background": "assets/images/BGRoom.png"
 
     },
     {
+      "story": "You are laying in your prison as the door suddenly unlocks.\nThe smell of freedom approaches you...",
+      "optionPos": "",
+      "optionNeg": "Just 10 more minutes please.\n*Turns around and continue sleeping*",
+      "conclusion": "",
+      "background": "assets/images/BGPrison.png"
+    },
+    {
       "story": "You start rolling, down a hill..",
       "optionPos": "",
-      "optionNeg": "I wanna` test my strength ¯\\_(ツ)_/¯",
+      "optionNeg": "I wanna' test my strength ¯\\_(ツ)_/¯",
       "conclusion": "",
       "background": "assets/images/BGRollingHill.png"
 
     },
     {
-      "story": "You wake up in a cabin on a ship.",
+      "story": "You wake up in a fancy yet rustic cabin on a ship.",
       "optionPos": "",
       "optionNeg": "I'm the Captain of this ship and I feel like ordering myself to walk the plank.",
       "conclusion": "",
